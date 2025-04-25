@@ -1,5 +1,7 @@
 # Archetect Catalog Starter: Basic
 
+![Latest Release](https://img.shields.io/github/v/release/archetect-common/catalog-starter-basic.archetype?style=flat-square&label=Latest%20Release&color=blue)
+
 This is an [Archetect](https://archetect.github.io/) archetype.
 
 ## Rendering
