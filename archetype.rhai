@@ -37,10 +37,6 @@ context += prompt("Source Control:", "source-control", #{
   ]),  
 });
 
-render(Archetype("gitignore"), Path(`${context["project-name"]}.catalog`), #{
-    ignore: ["IDEA", "VSCode", "Eclipse"]
-});
-
 if context.contains("source-control") {
     if context["source-control"] == "Github" {
         context += prompt("Github Organization:", "organization-name", #{
@@ -58,6 +54,10 @@ if context.contains("source-control") {
         display("git push -u origin HEAD");
     }
 }
+
+render(Archetype("gitignore"), Path(`${context["project-name"]}.catalog`), #{
+    ignore: ["IDEA", "VSCode", "Eclipse"]
+});
 
 render(Directory("contents/base"), context);
 
