@@ -46,7 +46,7 @@ if context.contains("source-control") {
     render(Directory("contents/github"), context);
    
     display();
-    display(render("cd {{ proejct-name }}.catalog", context));
+    display(render("cd {{ project-name }}.catalog", context));
     display("git init -b main");
     display(render("gh repo create {{ organization-name }}/{{ project-name }}.catalog --public --source=. --remote=origin", context));
     display("git add .");
