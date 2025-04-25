@@ -9,7 +9,7 @@ This is an [Archetect](https://archetect.github.io/) archetype.
 To generate a new Catalog from this Archetype, copy and execute the following command:
 
 ```sh
-archetect render https://github.com/archetect-common/catalog-starter-basic.archetype.git
+archetect render git@github.com:archetect-common/catalog-starter-basic.archetype.git
 ```
 
 ## Archetype Layout
