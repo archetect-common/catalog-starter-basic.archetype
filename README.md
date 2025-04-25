@@ -1,4 +1,4 @@
-# A basic Archetect Catalog starter
+# Archetect Catalog Starter: Basic
 
 This is an [Archetect](https://archetect.github.io/) archetype.
 
