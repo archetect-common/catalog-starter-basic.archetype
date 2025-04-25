@@ -1,0 +1,26 @@
+---
+description: "{{ description }}"
+authors: ["{{ author_full }}"]
+languages: []
+frameworks: []
+tags: []
+
+requires:
+  archetect: "{{ archetect_version }}"
+
+entries:
+  - catalog:
+      description: "Example Top-Level catalog"
+      source: git@github.com:archetect-common/archetype-starters.catalog.git
+  - archetype:
+      description: "Example Top-Level archetype"
+      source: git@github.com:archetect-common/archetype-starter-basic.archetype.git
+  - group:
+      description: "Example Group of Catalogs and Archetypes"
+      entries:
+        - catalog:
+            description: "Example Grouped catalog"
+            source: git@github.com:archetect-common/archetype-starters.catalog.git
+        - archetype:
+            description: "Example Grouped archetype"
+            source: git@github.com:archetect-common/archetype-starter-basic.archetype.git
