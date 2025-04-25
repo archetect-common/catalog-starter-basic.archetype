@@ -1,4 +1,4 @@
-# {{ project-title }} Catalog
+# {{ description }} Catalog
 
 {% if source-control == "Github" -%}
 ![Latest Release](https://img.shields.io/github/v/release/{{ organization-name }}/{{ project-name }}.archetype?style=flat-square&label=Latest%20Release&color=blue)
