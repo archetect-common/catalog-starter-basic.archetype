@@ -1,4 +1,4 @@
-name: Release Archetype
+name: Release Catalog
 on:
   workflow_dispatch:
     inputs:
