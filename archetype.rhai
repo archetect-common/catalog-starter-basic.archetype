@@ -42,13 +42,13 @@ if context.contains("source-control") {
     context += prompt("Github Organization:", "organization-name", #{
       placeholder: "orgname/username",
     });
-    context += set("git-repo", render("git@github.com:{{ organization-name }}/{{ archetype-name }}.catalog.git#1", context));
+    context += set("git-repo", render("git@github.com:{{ organization-name }}/{{ project-name }}.catalog.git#1", context));
     render(Directory("contents/github"), context);
    
     display();
     display(render("cd {{ proejct-name }}.catalog", context));
     display("git init -b main");
-    display(render("gh repo create {{ organization-name }}/{{ archetype-name }}.catalog --public --source=. --remote=origin", context));
+    display(render("gh repo create {{ organization-name }}/{{ project-name }}.catalog --public --source=. --remote=origin", context));
     display("git add .");
     display("git commit -m 'initial commit'");
     display("git push -u origin HEAD");
