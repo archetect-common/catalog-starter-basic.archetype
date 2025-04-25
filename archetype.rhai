@@ -37,28 +37,29 @@ context += prompt("Source Control:", "source-control", #{
   ]),  
 });
 
+render(Archetype("gitignore"), Path(`${context["project-name"]}.catalog`), #{
+    ignore: ["IDEA", "VSCode", "Eclipse"]
+});
+
 if context.contains("source-control") {
-  if context["source-control"] == "Github" {
-    context += prompt("Github Organization:", "organization-name", #{
-      placeholder: "orgname/username",
-    });
-    context += set("git-repo", render("git@github.com:{{ organization-name }}/{{ project-name }}.catalog.git#1", context));
-    render(Directory("contents/github"), context);
-   
-    display();
-    display(render("cd {{ project-name }}.catalog", context));
-    display("git init -b main");
-    display(render("gh repo create {{ organization-name }}/{{ project-name }}.catalog --public --source=. --remote=origin", context));
-    display("git add .");
-    display("git commit -m 'initial commit'");
-    display("git push -u origin HEAD");
-  }
+    if context["source-control"] == "Github" {
+        context += prompt("Github Organization:", "organization-name", #{
+          placeholder: "orgname/username",
+        });
+        context += set("git-repo", render("git@github.com:{{ organization-name }}/{{ project-name }}.catalog.git#1", context));
+        render(Directory("contents/github"), context);
+      
+        display();
+        display(render("cd {{ project-name }}.catalog", context));
+        display("git init -b main");
+        display(render("gh repo create {{ organization-name }}/{{ project-name }}.catalog --public --source=. --remote=origin", context));
+        display("git add .");
+        display("git commit -m 'initial commit'");
+        display("git push -u origin HEAD");
+    }
 }
 
 render(Directory("contents/base"), context);
 
-render(Archetype("gitignore"), Path(`${context["project-name"]}.catalog`), #{
-    ignore: ["IDEA", "VSCode", "Eclipse"]
-});
 
 
